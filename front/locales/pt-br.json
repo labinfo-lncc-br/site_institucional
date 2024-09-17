@@ -1,0 +1,12 @@
+{
+    "Header":{
+        "locator":"Ministério da Ciência, Tecnologia e Inovação",
+        "title": "LNCC - Laboratório de Bioinformática",
+        "altBanner": "Marca do Laboratório de Bioinformática"
+    },
+    "Home":{
+        "leftContent":"O LABINFO desenvolve pesquisas em Bioinformática e Biologia Computacional utilizando a infraestrutura de processamento do LNCC, incluindo o Supercomputador Santos Dumont.#Está associado à Unidade de Genômica Computacional “Darcy Fontoura de Almeida” (UGCDFA), uma facility de sequenciamento de última geração.#Utiliza técnicas de Computação de Alto Desempenho e de metodologias nas áreas de Inteligência Artificial e Big Data que permite maior agilidade no processamento e análise dos dados gerados.",
+         "rightContent":"Com experiência em Genômica, transcritômica, metagenômica, exoma, filogenômica, e pequenos RNAs desenvolve pesquisa nas áreas de saúde humana, animal, vegetal e em aplicações biotecnológicas.#Desde 2020, o LABINFO tem atuado no enfrentamento da pandemia da COVID-19. Os estudos de sequenciamento e análise de genoma do vírus e de amostras de pacientes acometidos pela COVID-19 estão sendo realizados em colaboração com instituições nacionais com as quais tivemos diferentes projetos aprovados."
+        
+    }
+}
