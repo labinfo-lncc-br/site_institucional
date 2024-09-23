@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import {
   Breadcrumb,
   Button,
+  FlyOut,
   GovBRLogo,
   GovLogo,
   Header,
@@ -20,21 +21,69 @@ const Layout = ({ children, breadcrumb }: any) => {
     <>
       <div className="block w-[80%] mx-auto">
         <div>
-          <Header locator={t("locator")} headerTitle={t("title")}>
+          <Header locator={t("locator")} headerTitle={t("title")} login={false}>
             <Header.PrimaryMenu>
-              <a href="#">Órgãos do Governo</a>
-              <a href="#">Acesso à Informação</a>
-              <a href="#">Legislação</a>
-              <a href="#">Acessibilidade</a>
+            <a href="/" className="text-sm">
+                Página Inicial
+              </a>
+              <a href="/posts" className="text-sm">
+                Notícias
+              </a>
+              <a href="/projects" className="text-sm">
+                Projetos
+              </a>
+              <a href="/papers" className="text-sm">
+                Publicações
+              </a>
+              <a href="/tools" className="text-sm">
+                Ferramentas
+              </a>
+
+              <FlyOut>
+                <FlyOut.Toggle>
+                  <a href="#" className="text-sm">
+                    COVID-19
+                  </a>
+                </FlyOut.Toggle>
+                <FlyOut.Content>
+                  <ul className="flex flex-col gap-3 w-auto bg-govbr-gray-2 p-6 rounded-md text-nowrap border border-govbr-gray-10">
+                    <li>
+                      <a
+                        href="http://www.corona-omica.br-mcti.lncc.br/"
+                        className="text-sm"
+                        target="_blank"
+                      >
+                        Corona-ômica BR
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="http://www.corona-omica.rj.lncc.br/"
+                        className="text-sm"
+                        target="_blank"
+                      >
+                        Corona-ômica RJ
+                      </a>
+                    </li>
+                  </ul>
+                </FlyOut.Content>
+              </FlyOut>
+
+              <a href="/team" className="text-sm">
+                Participantes
+              </a>
+              <a href="/ugc" className="text-sm">
+                UGC
+              </a>
             </Header.PrimaryMenu>
-            <Header.IconMenu>
+            {/* <Header.IconMenu>
               <Button variant="ghost" size="icon">
                 <FontAwesomeIcon icon={faCookieBite} />
               </Button>
               <Button variant="ghost" size="icon">
                 <FontAwesomeIcon icon={faCircleHalfStroke} />
               </Button>
-            </Header.IconMenu>
+            </Header.IconMenu> */}
           </Header>
         </div>
         <div className="block pb-6">
@@ -46,7 +95,6 @@ const Layout = ({ children, breadcrumb }: any) => {
         </div>
         {breadcrumb && (
           <div className="mb-6">
-            
             <Breadcrumb>
               <Button size="icon" variant="ghost">
                 <FontAwesomeIcon icon={faHouse} />

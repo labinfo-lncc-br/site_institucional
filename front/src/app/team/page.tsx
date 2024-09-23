@@ -2,14 +2,17 @@
 import moment from "moment-with-locales-es6";
 import { useTranslations } from "next-intl";
 import Layout from "../components/Layout";
-import NewsList from "../components/NewsList";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@codeworker.br/govbr-tw-react/dist/components/Button";
-import { Avatar } from "@codeworker.br/govbr-tw-react";
+import { Input, Button } from "@codeworker.br/govbr-tw-react"; // Importando Input e Button
+import { useState } from "react";
 
 export default function Team() {
   moment.locale("pt-br");
   const t = useTranslations("Team");
+
+  const [filter, setFilter] = useState("");
+  const [isSorted, setIsSorted] = useState(true);
 
   const team = [
     {
@@ -18,6 +21,7 @@ export default function Team() {
       cargo: "Técnica de laboratório",
       lattes: "http://lattes.cnpq.br/9438292906838128",
       createdAt: "2022-02-14T23:24:04.621Z",
+      avatar: "Alexandra Lhemkuhl Gerber.png",
       __v: 0,
     },
     {
@@ -68,14 +72,14 @@ export default function Team() {
       createdAt: "2022-02-14T23:27:05.147Z",
       __v: 0,
     },
-    {
-      _id: "620ae568d64dae4a1963704d",
-      nome: "Kary Ann del Carmen O. Guatherot",
-      cargo: "Pesquisador",
-      lattes: "http://lattes.cnpq.br/1435339422167961",
-      createdAt: "2022-02-14T23:27:36.847Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "620ae568d64dae4a1963704d",
+    //   nome: "Kary Ann del Carmen O. Guatherot",
+    //   cargo: "Pesquisador",
+    //   lattes: "http://lattes.cnpq.br/1435339422167961",
+    //   createdAt: "2022-02-14T23:27:36.847Z",
+    //   __v: 0,
+    // },
     {
       _id: "620ae58fd64dae4a19637053",
       nome: "Luciane Prioli Ciapina Guedes",
@@ -100,14 +104,14 @@ export default function Team() {
       createdAt: "2022-02-14T23:28:47.662Z",
       __v: 0,
     },
-    {
-      _id: "620ae5c0d64dae4a1963705c",
-      nome: "Marco Antonio Silva Cabral",
-      cargo: "Iniciacao Cientifica",
-      lattes: "http://lattes.cnpq.br/0081931606846738",
-      createdAt: "2022-02-14T23:29:04.849Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "620ae5c0d64dae4a1963705c",
+    //   nome: "Marco Antonio Silva Cabral",
+    //   cargo: "Iniciacao Cientifica",
+    //   lattes: "http://lattes.cnpq.br/0081931606846738",
+    //   createdAt: "2022-02-14T23:29:04.849Z",
+    //   __v: 0,
+    // },
     {
       _id: "620ae5d3d64dae4a1963705f",
       nome: "Marisa Fabiana Nicolas",
@@ -116,14 +120,14 @@ export default function Team() {
       createdAt: "2022-02-14T23:29:23.510Z",
       __v: 0,
     },
-    {
-      _id: "620ae5e7d64dae4a19637062",
-      nome: "Micaella Coelho Valente de Paula",
-      cargo: "Estudante de mestrado",
-      lattes: "http://lattes.cnpq.br/0070606281306061",
-      createdAt: "2022-02-14T23:29:43.707Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "620ae5e7d64dae4a19637062",
+    //   nome: "Micaella Coelho Valente de Paula",
+    //   cargo: "Estudante de mestrado",
+    //   lattes: "http://lattes.cnpq.br/0070606281306061",
+    //   createdAt: "2022-02-14T23:29:43.707Z",
+    //   __v: 0,
+    // },
     {
       _id: "620ae5f9d64dae4a19637065",
       nome: "Natália Fernandes Aquino",
@@ -140,22 +144,22 @@ export default function Team() {
       createdAt: "2022-02-14T23:30:18.085Z",
       __v: 0,
     },
-    {
-      _id: "620ae652d64dae4a19637074",
-      nome: "Vinícius Prata Klôh",
-      cargo: "Analista de Sistemas",
-      lattes: "http://lattes.cnpq.br/3159426558354291",
-      createdAt: "2022-02-14T23:31:30.213Z",
-      __v: 0,
-    },
-    {
-      _id: "63875fd063f8fc06f85bed20",
-      nome: "Rafael de Souza Terra",
-      cargo: "Estudante de doutorado",
-      lattes: "http://lattes.cnpq.br/8426017745859480",
-      createdAt: "2022-11-30T13:51:12.526Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "620ae652d64dae4a19637074",
+    //   nome: "Vinícius Prata Klôh",
+    //   cargo: "Analista de Sistemas",
+    //   lattes: "http://lattes.cnpq.br/3159426558354291",
+    //   createdAt: "2022-02-14T23:31:30.213Z",
+    //   __v: 0,
+    // },
+    // {
+    //   _id: "63875fd063f8fc06f85bed20",
+    //   nome: "Rafael de Souza Terra",
+    //   cargo: "Estudante de doutorado",
+    //   lattes: "http://lattes.cnpq.br/8426017745859480",
+    //   createdAt: "2022-11-30T13:51:12.526Z",
+    //   __v: 0,
+    // },
     {
       _id: "6387602863f8fc06f85bed25",
       nome: "Douglas Terra Machado",
@@ -172,14 +176,14 @@ export default function Team() {
       createdAt: "2022-11-30T13:54:17.985Z",
       __v: 0,
     },
-    {
-      _id: "638760b863f8fc06f85bed2b",
-      nome: "Samella Pontes Salles",
-      cargo: "Estudante de mestrado",
-      lattes: "http://lattes.cnpq.br/4640412083856656",
-      createdAt: "2022-11-30T13:55:04.115Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "638760b863f8fc06f85bed2b",
+    //   nome: "Samella Pontes Salles",
+    //   cargo: "Estudante de mestrado",
+    //   lattes: "http://lattes.cnpq.br/4640412083856656",
+    //   createdAt: "2022-11-30T13:55:04.115Z",
+    //   __v: 0,
+    // },
     {
       _id: "6387632f63f8fc06f85bed45",
       nome: "Cristina dos Santos Ferreira",
@@ -188,30 +192,30 @@ export default function Team() {
       createdAt: "2022-11-30T14:05:35.073Z",
       __v: 0,
     },
-    {
-      _id: "638764e963f8fc06f85bed49",
-      nome: "Marcele Laux",
-      cargo: "Pós-doutorando",
-      lattes: "http://lattes.cnpq.br/0409296274206133",
-      createdAt: "2022-11-30T14:12:57.389Z",
-      __v: 0,
-    },
-    {
-      _id: "6390e6b363f8fc06f85bee7e",
-      nome: "Lucas da Cruz Silva",
-      cargo: "Iniciacao Cientifica",
-      lattes: "http://lattes.cnpq.br​/2643095279010495",
-      createdAt: "2022-12-07T19:17:07.567Z",
-      __v: 0,
-    },
-    {
-      _id: "6390e72863f8fc06f85bee81",
-      nome: "Guilherme Freire da Silva Dornelas",
-      cargo: "Iniciacao Cientifica",
-      lattes: "http://lattes.cnpq.br/5344055287871399",
-      createdAt: "2022-12-07T19:19:04.481Z",
-      __v: 0,
-    },
+    // {
+    //   _id: "638764e963f8fc06f85bed49",
+    //   nome: "Marcele Laux",
+    //   cargo: "Pós-doutorando",
+    //   lattes: "http://lattes.cnpq.br/0409296274206133",
+    //   createdAt: "2022-11-30T14:12:57.389Z",
+    //   __v: 0,
+    // },
+    // {
+    //   _id: "6390e6b363f8fc06f85bee7e",
+    //   nome: "Lucas da Cruz Silva",
+    //   cargo: "Iniciacao Cientifica",
+    //   lattes: "http://lattes.cnpq.br​/2643095279010495",
+    //   createdAt: "2022-12-07T19:17:07.567Z",
+    //   __v: 0,
+    // },
+    // {
+    //   _id: "6390e72863f8fc06f85bee81",
+    //   nome: "Guilherme Freire da Silva Dornelas",
+    //   cargo: "Iniciacao Cientifica",
+    //   lattes: "http://lattes.cnpq.br/5344055287871399",
+    //   createdAt: "2022-12-07T19:19:04.481Z",
+    //   __v: 0,
+    // },
     {
       _id: "6509ef71cb9aef06f14f3120",
       nome: "Alan Tardin da Silva",
@@ -222,22 +226,48 @@ export default function Team() {
     },
   ];
 
+  const filteredTeam = team.filter((member) =>
+    member.nome.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  const sortedTeam = [...filteredTeam].sort((a, b) => {
+    return isSorted
+      ? a.nome.localeCompare(b.nome)
+      : b.nome.localeCompare(a.nome);
+  });
+
+  const toggleSort = () => {
+    setIsSorted((prev) => !prev);
+  };
+
   return (
     <Layout breadcrumb={[{ label: t("title"), link: "#" }]}>
       <div className="flex items-center mb-12">
         <div className="flex-1">
           <h1 className="text-3xl font-semibold">{t("title")}</h1>
         </div>
+        <div className="flex gap-4">
+          <Input
+            type="text"
+            placeholder="Filtrar por nome"
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="w-60"
+          />
+          <Button onClick={toggleSort} className="font-normal">
+            {isSorted ? "Ordenar Z-A" : "Ordenar A-Z"}
+          </Button>
+        </div>
       </div>
       <div>
-        <ul className="flex flex-col gap-3">
-          {team.map((item: any) => (
-            <li className="flex gap-3 border-b border-govbr-gray-10 pb-3">
+        <ul className="grid grid-cols-[1fr_1fr] gap-12">
+          {sortedTeam.map((item) => (
+            <li key={item._id} className="flex gap-3 border-b border-govbr-gray-10 pb-3 items-center">
               <div>
-                <Avatar
-                  src={item?.avatar}
+                <img
+                  src={`/images/${item.nome}.png`}
                   title={item.nome}
-                  variant="image"
+                  className="rounded-full w-20"
                 />
               </div>
               <div className="flex-1 flex flex-col gap-1">

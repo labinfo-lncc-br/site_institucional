@@ -29,5 +29,13 @@
     "Team": {
         "title": "Participantes",
         "link": "Currículo Lattes"
+    },
+    "UGC": {
+        "title": "Unidade de Genômica Computacional Darcy Fontoura de Almeida (UGCDFA)",
+        "p1": "A Unidade de Genômica Computacional Darcy Fontoura de Almeida (UGCDFA) está associada ao Laboratório de Bioinformática do Laboratório Nacional de Computação Científica – LNCC, um dos institutos do Ministério da Ciência, Tecnologia e Inovação (MCTI).",
+        "p2": "Essa Unidade multiusuária tem por finalidade integrar as atividades de sequenciamento em larga-escala de DNA e de bioinformática numa só unidade, permitindo assim o melhor aproveitamento dos dados gerados pelos sequenciadores de nova geração MiSeq e NextSeq da Illumina e MinION da Oxford Nanopore.",
+        "p3":"Inaugurada no dia 19 de setembro de 2008, a UGCDFA é um centro de excelência e de referência nacional em sequenciamento de nova geração. A UGCDFA conta com profissionais capacitadas no Brasil e exterior, com anos de experiência na construção de bibliotecas de DNA (Shotgun e Mate Pair), RNA total, pequenos RNAs, exomas, metagenomas e manuseio dos sequenciadores.",
+        "p4":"A UGCDFA colabora com pesquisadores de vários Institutos e Universidades do Brasil e do exterior e presta serviços de sequenciamento nas plataformas Illumina MiSeq/NextSeq. Os interessados em utilizar uma de nossas plataformas, favor enviar email para labinfougc@lncc.br.",
+        "link": "Requisição de Sequenciamento"
     }
 }

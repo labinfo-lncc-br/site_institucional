@@ -6,6 +6,8 @@ import moment from "moment-with-locales-es6";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import CardItem from "./components/CardItem";
+import { buttonVariants } from "@codeworker.br/govbr-tw-react/dist/components/Button";
+import { cn } from "@/lib/utils";
 
 const news = [
   {
@@ -70,19 +72,17 @@ export default function Home() {
         </div>
         <FeaturedTitle>
           <FontAwesomeIcon icon={faNewspaper} />
-          <h1>
+          <h1 className="py-12">
             <span className="text-nowrap">Últimas Notícias</span>
           </h1>
         </FeaturedTitle>
         <div className="flex gap-6">
           {news.map((item: any) => (
-            <CardItem item={item} />
+            <CardItem item={item} width="w-1/3"/>
           ))}
         </div>
         <div className="py-6 block mx-auto">
-          <Button variant="outline" density="low" className="font-normal">
-            Mais Notícias
-          </Button>
+        <a href="/posts" className={cn(buttonVariants({variant:"default"}), "font-normal")}>Ver mais notícias</a>
         </div>
       </div>
     </Layout>
