@@ -7,11 +7,34 @@ import { useTranslations } from "next-intl";
 const CardItem = ({ item, width="", linkLabel = "" }: any) => {
   const t = useTranslations("CardItem");
   const { title, imageUrl, content, createdAt, link } = item;
+  const hasVideo = (imageUrl.split("."))[1] === "youtube"
+
+
+
+  const YoutubeEmbed = ({ imageUrl }:any) => {
+    const embedId = (imageUrl.split("v="))[1];
+    console.log(embedId)
+    return <div className="overflow-hidden h-[0px] relative pb-[56.25%]">
+      <iframe
+        width="853"
+        height="480"
+        src={`https://www.youtube.com/embed/${embedId}`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+        className="left-0 top-0 h-full w-full absolute"
+      />
+    </div>
+  };
+
   return (
     <Card className={cn(width)}>
-      {imageUrl && (
+      {imageUrl && 
+
+        hasVideo ? <YoutubeEmbed imageUrl={imageUrl} /> :
         <img src={imageUrl} alt={`${t("coverAlt")} ${title}`} title={title} />
-      )}
+      }
       <Card.Header className="max-h-[150px] flex flex-col items-center w-full text-left">
         <h2 className="text-govbr-blue-warm-vivid-70 text-base w-full text-left">{title}</h2>
       </Card.Header>
