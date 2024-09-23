@@ -18,26 +18,37 @@ export default function UGC() {
           </h1>
         </div>
       </div>
-      
+
       <div className="flex gap-6">
         <Card className="w-1/2">
           <img src="images/ugc-1.png" />
           <Card.Main className="flex flex-col gap-3 py-3">
-            <p>{t("p1")}</p>
-            <p>{t("p2")}</p>
+            <ul className="flex flex-col">
+              <li className="border-b border-govbr-gray-10 py-6">{t("p1")}</li>
+              <li className="border-b border-govbr-gray-10 py-6">{t("p2")}</li>
+            </ul>
           </Card.Main>
         </Card>
         <Card className="w-1/2">
           <img src="images/ugc-2.png" />
           <Card.Main className="flex flex-col gap-3 py-3">
-            <p>{t("p3")}</p>
-            <p>{t("p4")}</p>
+            <ul className="flex flex-col">
+              <li className="border-b border-govbr-gray-10 py-6">{t("p3")}</li>
+              <li className="border-b border-govbr-gray-10 py-6">{t("p4")}</li>
+            </ul>
           </Card.Main>
         </Card>
       </div>
-      <div className="py-6 my-6 text-center border-y border-govbr-gray-10
-      ">
-      <a href="#" className={cn(buttonVariants({variant:"default"}), "font-normal")}>{t('link')}</a>
+      <div
+        className="py-6 my-6 text-center border-y border-govbr-gray-10
+      "
+      >
+        <a
+          href="#"
+          className={cn(buttonVariants({ variant: "default" }), "font-normal")}
+        >
+          {t("link")}
+        </a>
       </div>
     </Layout>
   );
